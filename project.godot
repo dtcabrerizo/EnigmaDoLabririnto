@@ -13,12 +13,16 @@ config_version=5
 config/name="EnigmaDoLabirinto3D"
 run/main_scene="uid://c21cfd624o04u"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://dwwocyhj6d7nx"
 
 [autoload]
 
 NetworkManager="*uid://0sbtj4odyrlc"
 Transition="*uid://bonlfar5k2sgh"
+
+[display]
+
+window/size/mode=2
 
 [physics]
 
