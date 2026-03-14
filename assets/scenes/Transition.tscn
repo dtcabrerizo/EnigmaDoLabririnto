@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://bt5wqum48sxto" path="res://assets/scripts/Transition.gd" id="1_s8d3p"]
 [ext_resource type="Shader" uid="uid://dwpafcm12gn" path="res://assets/shaders/Transition.gdshader" id="2_4i4eg"]
+[ext_resource type="AudioStream" uid="uid://y3dr76wk4xy4" path="res://assets/sounds/BGM/World-of-Automatons.ogg" id="3_c62mf"]
+[ext_resource type="AudioStream" uid="uid://d22e0s5kkgqby" path="res://assets/sounds/BGM/The-Darkness-Below_Looping.ogg" id="4_233tn"]
 
 [sub_resource type="Gradient" id="Gradient_s8d3p"]
 offsets = PackedFloat32Array(0, 0.22839506, 0.4814815, 0.69753087, 0.8888889)
@@ -118,4 +120,8 @@ theme_override_font_sizes/font_size = 24
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1340530767]
+[node name="Menu_BGM" type="AudioStreamPlayer2D" parent="." unique_id=1340530767]
+stream = ExtResource("3_c62mf")
+
+[node name="Game_BGM" type="AudioStreamPlayer2D" parent="." unique_id=1260609731]
+stream = ExtResource("4_233tn")

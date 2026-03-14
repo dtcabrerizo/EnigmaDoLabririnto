@@ -6,11 +6,12 @@ extends CanvasLayer
 @onready var toast_notification: MarginContainer = $ToastNotification
 @onready var toast_label: Label = %ToastLabel
 @onready var panel_container: PanelContainer = %PanelContainer
-@onready var audio_stream: AudioStreamPlayer2D = $AudioStreamPlayer2D
+@onready var bgms: Array[AudioStreamPlayer2D] = [ $Menu_BGM, $Game_BGM ]
 
 signal audio_finished
 
 enum Audio { COLLECTED, PUSHING, STEP, GAMEOVER, WRONGMOVE }
+enum BGM { MENU, GAME }
 
 @onready var AUDIOS: Array[Resource] =  [
 	preload("res://assets/sounds/collected.wav"),
@@ -30,6 +31,13 @@ func play_sound(audio: Audio) -> void:
 		audio_finished.emit()
 	)
 
+func stop_bgm() -> void:
+	for b: AudioStreamPlayer2D in bgms:
+		b.stop()
+	
+func play_bgm(bgm: BGM) -> void:
+	stop_bgm()
+	bgms[bgm].play()
 
 func _reset():
 	rect.position = Vector2.ZERO

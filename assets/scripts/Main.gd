@@ -12,6 +12,7 @@ var current_player: PlayerInfo
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Transition.play_bgm(Transition.BGM.GAME)
 	# Conecta eventos do board
 	board.piece_ejected.connect(_on_piece_ejected)
 	board.pushing_animation_finished.connect(_on_board_pushing_animation_finished)
@@ -50,6 +51,8 @@ func _ready() -> void:
 
 	else:
 		# Se for cliente, avisa ao servidor que a cena carregou e está prontas
+		await get_tree().create_timer(1.0).timeout
+		NetworkManager.debug_print("Solicitndo dados para o servidor...")		
 		request_initial_data.rpc_id(1)
 
 func _on_interface_player_clicked(player_info: PlayerInfo):
@@ -304,6 +307,7 @@ func rpc_broadcast_game_over(winner_name: String, _pos: Vector2):
 
 	# Muda a cena	
 	# NetworkManager.debug_print("Recebi mensagem de Game Over, mudando de cena...", board.grid_to_world(pos.x, pos.y))
+	Transition.stop_bgm()
 	Transition.fade_to_scene(game_over_scene)
 	
 @rpc("authority", "call_local", "reliable")
@@ -378,7 +382,7 @@ func initial_setup(board_data: Dictionary, players: Array, _current_player: Dict
 	if not is_node_ready():
 		await ready # Garante que todos os @onready (como o board) já foram preenchidos
 	
-	# NetworkManager.debug_print("Recebi informações do jogo: ", players, " state: ", _state, " turno: ", _current_player.name if _current_player else "")	
+	NetworkManager.debug_print("Recebi informações do jogo: ", players, " state: ", _state, " turno: ", _current_player.name if _current_player else "")	
 
 	# Cao ainda não tenha iniciado o turno tenta novamente
 	if not _current_player:
@@ -428,6 +432,9 @@ func request_initial_data():
 		await ready # Garante que todos os @onready (como o board) já foram preenchidos
 	
 	var sender_id = multiplayer.get_remote_sender_id()
+	
+	NetworkManager.debug_print("Ciente: ", sender_id, " solicitou initial data")
+	
 	# O servidor envia os dados salvos especificamente para quem pediu
 	initial_setup.rpc_id(
 		sender_id, 

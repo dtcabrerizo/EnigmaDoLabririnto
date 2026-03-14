@@ -1,6 +1,5 @@
 extends Control
 
-@onready var player_list_vbox: VBoxContainer = $PlayerListVBox
 @onready var start_button: Button = %StartButton
 
 @onready var main_scene : PackedScene = preload("res://assets/scenes/Main.tscn")
@@ -76,6 +75,7 @@ func _update_game_status() -> void:
 
 @rpc("authority", "call_local", "reliable")
 func start_game_rpc() -> void:
+	Transition.stop_bgm()
 	Transition.iris_to_scene(main_scene)
 	
 

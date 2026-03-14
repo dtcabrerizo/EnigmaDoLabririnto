@@ -154,6 +154,7 @@ func client_reject_connection(reason: String) -> void:
 	multiplayer.multiplayer_peer.close()
 
 func update_game_status() -> void:
+	if multiplayer.is_server(): return
 	check_game_status.rpc_id(1)
 
 @rpc("any_peer", "reliable")

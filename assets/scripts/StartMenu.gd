@@ -26,6 +26,7 @@ func _ready() -> void:
 	await get_tree().create_timer(4.0).timeout
 	_animate_menu_enter(main_panel)
 	
+	Transition.play_bgm(Transition.BGM.MENU)
 
 func _error() -> void:
 	pass

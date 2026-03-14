@@ -27,6 +27,7 @@ func _ready() -> void:
 	_create_other_players_container()
 	_configure_winner_container()
 
+	Transition.play_bgm(Transition.BGM.MENU)
 	Transition.fire_cannons()
 	Transition.play_sound(Transition.Audio.GAMEOVER)
 	await Transition.audio_finished
