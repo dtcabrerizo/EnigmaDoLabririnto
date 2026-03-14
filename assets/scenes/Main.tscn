@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://cmidcaiirmipe"]
+
+[ext_resource type="Script" uid="uid://duddf1wwqki5e" path="res://assets/scripts/Main.gd" id="1_0bbpv"]
+[ext_resource type="PackedScene" uid="uid://crhaw5emd55dh" path="res://assets/scenes/Board.tscn" id="2_rarhs"]
+[ext_resource type="PackedScene" uid="uid://xkha4t4ul8l6" path="res://assets/scenes/Interface.tscn" id="2_xt100"]
+
+[node name="Main" type="Node3D" unique_id=1762299004]
+script = ExtResource("1_0bbpv")
+
+[node name="Interface" parent="." unique_id=851489717 instance=ExtResource("2_xt100")]
+
+[node name="Board" parent="." unique_id=1697795556 instance=ExtResource("2_rarhs")]

@@ -1,0 +1,101 @@
+[gd_scene format=3 uid="uid://xkha4t4ul8l6"]
+
+[ext_resource type="Texture2D" uid="uid://c7c47df7acxg2" path="res://assets/images/Chars_rounded.png" id="1_j3h2i"]
+[ext_resource type="Script" uid="uid://cfk6or3nro7sq" path="res://assets/scripts/Interface.gd" id="1_kcbgo"]
+[ext_resource type="PackedScene" uid="uid://h61h7e0hhd33" path="res://assets/scenes/PieceSlot.tscn" id="3_j3h2i"]
+[ext_resource type="PackedScene" uid="uid://ch4w36p731n2" path="res://assets/scenes/TreasureCard.tscn" id="4_kcbgo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jg37x"]
+atlas = ExtResource("1_j3h2i")
+region = Rect2(0, 0, 216, 213)
+
+[node name="Interface" type="Control" unique_id=851489717]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kcbgo")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=913527228]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -200.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=140390378]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Char" type="TextureRect" parent="PanelContainer/VBoxContainer" unique_id=1681441364]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = SubResource("AtlasTexture_jg37x")
+expand_mode = 5
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer" unique_id=186953271]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+text = "Peça Atual"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PieceSlotHolder" type="Panel" parent="PanelContainer/VBoxContainer" unique_id=2062015373]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="PieceSlot" parent="PanelContainer/VBoxContainer/PieceSlotHolder" unique_id=1499742237 instance=ExtResource("3_j3h2i")]
+unique_name_in_owner = true
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="Label2" type="Label" parent="PanelContainer/VBoxContainer" unique_id=27956917]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+text = "Objetivo Atual"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CardSlot" type="Panel" parent="PanelContainer/VBoxContainer" unique_id=2061256045]
+custom_minimum_size = Vector2(78, 104)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="TreasureCard" parent="PanelContainer/VBoxContainer/CardSlot" unique_id=242699449 instance=ExtResource("4_kcbgo")]
+unique_name_in_owner = true
+position = Vector2(39, 52)
+scale = Vector2(0.5, 0.5)
+
+[node name="DiscardPile" type="Control" parent="PanelContainer/VBoxContainer" unique_id=944922313]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer" unique_id=1287693984]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+
+[node name="PlayerList" type="VBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer" unique_id=1989189560]
+unique_name_in_owner = true
+layout_mode = 2

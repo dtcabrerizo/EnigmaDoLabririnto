@@ -1,0 +1,199 @@
+[gd_scene format=3 uid="uid://b1otwsvpgaade"]
+
+[ext_resource type="Script" uid="uid://c3uqibscc25xo" path="res://assets/scripts/Lobby.gd" id="1_hk84t"]
+[ext_resource type="Texture2D" uid="uid://cv4lk0r884m5c" path="res://assets/images/LobbyBack.png" id="2_si8yd"]
+[ext_resource type="Theme" uid="uid://bgjp71hn36d70" path="res://assets/resources/my_theme.tres" id="4_0k7jh"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4nc2p"]
+load_path = "res://.godot/imported/Chars_rounded.png-1b4a6e2dca5410b0ea30b8f573617273.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0k7jh"]
+atlas = SubResource("CompressedTexture2D_4nc2p")
+region = Rect2(0, 0, 216, 213)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4nc2p"]
+atlas = SubResource("CompressedTexture2D_4nc2p")
+region = Rect2(0, 0, 216, 213)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hett2"]
+atlas = SubResource("CompressedTexture2D_4nc2p")
+region = Rect2(0, 0, 216, 213)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1c4jd"]
+atlas = SubResource("CompressedTexture2D_4nc2p")
+region = Rect2(0, 0, 216, 213)
+
+[node name="Lobby" type="Control" unique_id=1073331960]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hk84t")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=768968685]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_si8yd")
+expand_mode = 5
+stretch_mode = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=183158486]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -275.5
+offset_top = -176.5
+offset_right = 275.5
+offset_bottom = 176.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 25
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer" unique_id=1220677579]
+layout_mode = 2
+theme_override_constants/h_separation = 25
+theme_override_constants/v_separation = 25
+columns = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/GridContainer" unique_id=1607138442]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/GridContainer/PanelContainer" unique_id=1392445446]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Player0" type="HBoxContainer" parent="VBoxContainer/GridContainer/PanelContainer/MarginContainer" unique_id=1714329527]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.5019608)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/GridContainer/PanelContainer/MarginContainer/Player0" unique_id=480088834]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+texture = SubResource("AtlasTexture_0k7jh")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="VBoxContainer/GridContainer/PanelContainer/MarginContainer/Player0" unique_id=397572771]
+layout_mode = 2
+text = "Jogador 1
+(Aguardando ...)"
+horizontal_alignment = 1
+
+[node name="PanelContainer2" type="PanelContainer" parent="VBoxContainer/GridContainer" unique_id=1459907541]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/GridContainer/PanelContainer2" unique_id=962903316]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Player1" type="HBoxContainer" parent="VBoxContainer/GridContainer/PanelContainer2/MarginContainer" unique_id=1830338995]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.5019608)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/GridContainer/PanelContainer2/MarginContainer/Player1" unique_id=637135518]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+texture = SubResource("AtlasTexture_4nc2p")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="VBoxContainer/GridContainer/PanelContainer2/MarginContainer/Player1" unique_id=155180649]
+layout_mode = 2
+text = "Jogador 2
+(Aguardando ...)"
+horizontal_alignment = 1
+
+[node name="PanelContainer3" type="PanelContainer" parent="VBoxContainer/GridContainer" unique_id=1390618364]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/GridContainer/PanelContainer3" unique_id=8590637]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Player2" type="HBoxContainer" parent="VBoxContainer/GridContainer/PanelContainer3/MarginContainer" unique_id=331792965]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.5019608)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/GridContainer/PanelContainer3/MarginContainer/Player2" unique_id=431208201]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+texture = SubResource("AtlasTexture_hett2")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="VBoxContainer/GridContainer/PanelContainer3/MarginContainer/Player2" unique_id=2066083379]
+layout_mode = 2
+text = "Jogador 3
+(Aguardando ...)"
+horizontal_alignment = 1
+
+[node name="PanelContainer4" type="PanelContainer" parent="VBoxContainer/GridContainer" unique_id=656086573]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/GridContainer/PanelContainer4" unique_id=139101804]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Player3" type="HBoxContainer" parent="VBoxContainer/GridContainer/PanelContainer4/MarginContainer" unique_id=1397354351]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.5019608)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/GridContainer/PanelContainer4/MarginContainer/Player3" unique_id=1445673626]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+texture = SubResource("AtlasTexture_1c4jd")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="VBoxContainer/GridContainer/PanelContainer4/MarginContainer/Player3" unique_id=638548234]
+layout_mode = 2
+text = "Jogador 4
+(Aguardando ...)"
+horizontal_alignment = 1
+
+[node name="StartButton" type="Button" parent="VBoxContainer" unique_id=1055671005]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(250, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("4_0k7jh")
+theme_override_font_sizes/font_size = 26
+text = "Iniciar
+"
+
+[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]

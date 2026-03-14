@@ -1,0 +1,177 @@
+[gd_scene format=3 uid="uid://cmsqgag8eyivc"]
+
+[ext_resource type="Texture2D" uid="uid://bicsm7wrdr8x4" path="res://assets/images/BackGameOver.png" id="1_08r38"]
+[ext_resource type="Script" uid="uid://dwae2sinaxw0e" path="res://assets/scripts/GameOver.gd" id="1_np2qh"]
+
+[sub_resource type="FontVariation" id="FontVariation_ilmw6"]
+spacing_glyph = 5
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ilmw6"]
+load_path = "res://.godot/imported/Chars_rounded.png-1b4a6e2dca5410b0ea30b8f573617273.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mq41s"]
+atlas = SubResource("CompressedTexture2D_ilmw6")
+region = Rect2(0, 0, 216, 213)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_np2qh"]
+load_path = "res://.godot/imported/Chars_rounded.png-1b4a6e2dca5410b0ea30b8f573617273.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_83atm"]
+atlas = SubResource("CompressedTexture2D_np2qh")
+region = Rect2(0, 0, 216, 213)
+
+[node name="GameOver" type="Control" unique_id=1445679614]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_np2qh")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=469690140]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1615699955]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_08r38")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="." unique_id=1534732818]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -49.5
+offset_top = -387.0
+offset_right = 49.5
+offset_bottom = -364.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.96862745, 0.8666667, 0.5254902, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.10980392)
+theme_override_colors/font_outline_color = Color(0.90314794, 0.769747, 0.2911843, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 4
+theme_override_constants/shadow_outline_size = 10
+theme_override_fonts/font = SubResource("FontVariation_ilmw6")
+theme_override_font_sizes/font_size = 60
+text = "FIM DE JOGO"
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=118722704]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer" unique_id=1229718564]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/HBoxContainer" unique_id=1408326204]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/HBoxContainer/MarginContainer" unique_id=668997474]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/HBoxContainer/MarginContainer/VBoxContainer" unique_id=346321760]
+layout_mode = 2
+text = "Vencedor"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Winner" type="HBoxContainer" parent="PanelContainer/HBoxContainer/MarginContainer/VBoxContainer" unique_id=968733773]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/HBoxContainer/MarginContainer/VBoxContainer/Winner" unique_id=3184775]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+texture = SubResource("AtlasTexture_mq41s")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="PanelContainer/HBoxContainer/MarginContainer/VBoxContainer/Winner" unique_id=512370885]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 25
+text = "Jogador"
+horizontal_alignment = 1
+
+[node name="WinnerCards" type="Control" parent="PanelContainer/HBoxContainer/MarginContainer/VBoxContainer" unique_id=518489176]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(321, 208)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer2" type="MarginContainer" parent="PanelContainer/HBoxContainer" unique_id=341972261]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="OtherPlayersContainer" type="VBoxContainer" parent="PanelContainer/HBoxContainer/MarginContainer2" unique_id=581897576]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="OtherPlayerTemplate" type="HBoxContainer" parent="." unique_id=404352404]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_right = 378.0
+offset_bottom = 131.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="OtherPlayerTemplate" unique_id=1507081291]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="OtherPlayerTemplate/HBoxContainer" unique_id=408672753]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+texture = SubResource("AtlasTexture_83atm")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="OtherPlayerTemplate/HBoxContainer" unique_id=1117115955]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="OtherPlayerTemplate/HBoxContainer/VBoxContainer" unique_id=1589894971]
+layout_mode = 2
+text = "Jogador 3"
+horizontal_alignment = 1
+
+[node name="Cards" type="Control" parent="OtherPlayerTemplate/HBoxContainer/VBoxContainer" unique_id=1774960543]
+custom_minimum_size = Vector2(243, 104)
+layout_mode = 2
+size_flags_vertical = 3

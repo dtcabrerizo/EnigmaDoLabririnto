@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://bv2j5gawhgxra"]
+
+[ext_resource type="Script" uid="uid://tf038khlgvex" path="res://assets/scripts/PlayerInfoTemplate.gd" id="1_ec3wm"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_pf3s3"]
+load_path = "res://.godot/imported/Status.png-2170f1c2b9d4b950550bd0ce3c7b458d.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pf3s3"]
+atlas = SubResource("CompressedTexture2D_pf3s3")
+region = Rect2(-25, 0, 25, 25)
+
+[node name="PlayerInfoTemplate" type="PanelContainer" unique_id=461048712]
+offset_right = 206.0
+offset_bottom = 25.0
+script = ExtResource("1_ec3wm")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1148678094]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="HBoxContainer" unique_id=25287236]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+
+[node name="PlayerColor" type="ColorRect" parent="HBoxContainer/Control" unique_id=1629016234]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="StatusIcon" type="TextureRect" parent="HBoxContainer/Control" unique_id=268924215]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 25.0
+offset_bottom = 25.0
+texture = SubResource("AtlasTexture_pf3s3")
+
+[node name="VSeparator" type="VSeparator" parent="HBoxContainer" unique_id=1580972827]
+layout_mode = 2
+
+[node name="PlayerName" type="Label" parent="HBoxContainer" unique_id=201107286]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "[PLAYER NAME]"
+vertical_alignment = 1
+
+[node name="VSeparator2" type="VSeparator" parent="HBoxContainer" unique_id=1347221589]
+layout_mode = 2
+
+[node name="PlayerScore" type="Label" parent="HBoxContainer" unique_id=248628675]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+text = "99"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="." unique_id=314915524]
+layout_mode = 2
+focus_mode = 0
+flat = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

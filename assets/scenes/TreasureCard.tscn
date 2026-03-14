@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://ch4w36p731n2"]
+
+[ext_resource type="Script" uid="uid://dyxcke4jdvg7t" path="res://assets/scripts/TreasureCard.gd" id="1_ujlqr"]
+[ext_resource type="Texture2D" uid="uid://bwota38dmie0i" path="res://assets/images/Card.png" id="2_64i8c"]
+[ext_resource type="Texture2D" uid="uid://bxa8itunstfyc" path="res://assets/images/icons.png" id="3_q4jhn"]
+
+[node name="TreasureCard" type="Node2D" unique_id=242699449]
+script = ExtResource("1_ujlqr")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=743141518]
+texture = ExtResource("2_64i8c")
+
+[node name="Symbol" type="Sprite2D" parent="." unique_id=170851841]
+texture = ExtResource("3_q4jhn")
+hframes = 6
+vframes = 4

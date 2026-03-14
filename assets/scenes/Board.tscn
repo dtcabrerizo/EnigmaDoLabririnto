@@ -1,0 +1,96 @@
+[gd_scene format=3 uid="uid://crhaw5emd55dh"]
+
+[ext_resource type="Script" uid="uid://dc5n2uia5peo8" path="res://assets/scripts/Board.gd" id="1_bw3vb"]
+[ext_resource type="Script" uid="uid://cpr4xmeokww3o" path="res://assets/scripts/Camera.gd" id="2_tx6nw"]
+[ext_resource type="Texture2D" uid="uid://cywjx6l2trnf" path="res://assets/images/Arrow.png" id="3_88oge"]
+
+[sub_resource type="Environment" id="Environment_bw3vb"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tx6nw"]
+albedo_color = Color(0.47058824, 0.15686275, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_nglv8"]
+material = SubResource("StandardMaterial3D_tx6nw")
+size = Vector3(7.5, 0.1, 7.5)
+
+[node name="Board" type="Node3D" unique_id=1697795556]
+script = ExtResource("1_bw3vb")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=648990609]
+environment = SubResource("Environment_bw3vb")
+
+[node name="CameraPivot" type="Node3D" parent="." unique_id=725354671]
+transform = Transform3D(1, 0, 0, 0, -4.3711385e-08, 0.99999994, 0, -0.99999994, -4.3711385e-08, 0, 0, 0)
+script = ExtResource("2_tx6nw")
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot" unique_id=1631931792]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
+
+[node name="BoardBase" type="MeshInstance3D" parent="." unique_id=833697112]
+mesh = SubResource("BoxMesh_nglv8")
+
+[node name="Arrow-0" type="Decal" parent="BoardBase" unique_id=1845497707]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -3.6)
+size = Vector3(0.2, 0.2, 0.2)
+texture_albedo = ExtResource("3_88oge")
+
+[node name="Arrow-1" type="Decal" parent="BoardBase" unique_id=1626408934]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.6)
+size = Vector3(0.2, 0.2, 0.2)
+texture_albedo = ExtResource("3_88oge")
+
+[node name="Arrow-2" type="Decal" parent="BoardBase" unique_id=2017801685]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -3.6)
+size = Vector3(0.2, 0.2, 0.2)
+texture_albedo = ExtResource("3_88oge")
+
+[node name="Arrow-3" type="Decal" parent="BoardBase" unique_id=1077942511]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3.6, 0, -2)
+size = Vector3(0.2, 0.2, 0.2)
+texture_albedo = ExtResource("3_88oge")
+
+[node name="Arrow-4" type="Decal" parent="BoardBase" unique_id=480681802]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3.6, 0, 0)
+size = Vector3(0.2, 0.2, 0.2)
+texture_albedo = ExtResource("3_88oge")
+
+[node name="Arrow-5" type="Decal" parent="BoardBase" unique_id=1777290254]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3.6, 0, 2)
+size = Vector3(0.2, 0.2, 0.2)
+texture_albedo = ExtResource("3_88oge")
+
+[node name="Arrow-6" type="Decal" parent="BoardBase" unique_id=680378085]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 2, 0, 3.6)
+size = Vector3(0.2, 0.2, 0.2)
+texture_albedo = ExtResource("3_88oge")
+
+[node name="Arrow-7" type="Decal" parent="BoardBase" unique_id=1098010051]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 3.6)
+size = Vector3(0.2, 0.2, 0.2)
+texture_albedo = ExtResource("3_88oge")
+
+[node name="Arrow-8" type="Decal" parent="BoardBase" unique_id=473528976]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -2, 0, 3.6)
+size = Vector3(0.2, 0.2, 0.2)
+texture_albedo = ExtResource("3_88oge")
+
+[node name="Arrow-9" type="Decal" parent="BoardBase" unique_id=1185897292]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.6, 0, 2)
+size = Vector3(0.2, 0.2, 0.2)
+texture_albedo = ExtResource("3_88oge")
+
+[node name="Arrow-10" type="Decal" parent="BoardBase" unique_id=2122878679]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.6, 0, 0)
+size = Vector3(0.2, 0.2, 0.2)
+texture_albedo = ExtResource("3_88oge")
+
+[node name="Arrow-11" type="Decal" parent="BoardBase" unique_id=1122829968]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.6, 0, -2)
+size = Vector3(0.2, 0.2, 0.2)
+texture_albedo = ExtResource("3_88oge")
+
+[node name="TileArea" type="Node3D" parent="." unique_id=501523572]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=642559641]
+transform = Transform3D(1, 0, 0, 0, -0.35577586, 0.9345713, 0, -0.9345713, -0.35577586, 0, 10, -5.7094884)
+shadow_enabled = true

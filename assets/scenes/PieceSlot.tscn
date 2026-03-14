@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://h61h7e0hhd33"]
+
+[ext_resource type="Script" uid="uid://b02w802u2mwc3" path="res://assets/scripts/PieceSlot.gd" id="1_p2u7i"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_j3h2i"]
+load_path = "res://.godot/imported/tile_atlas.png-2ad5a7ac87384202d14a083e2ec88151.s3tc.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kqqmp"]
+atlas = SubResource("CompressedTexture2D_j3h2i")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kcbgo"]
+load_path = "res://.godot/imported/icons.png-c94cfcbcfb14d55ce62faf7c1b93c35f.s3tc.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_njyj0"]
+atlas = SubResource("CompressedTexture2D_kcbgo")
+region = Rect2(4, 1, 80, 80)
+
+[node name="PieceSlot" type="Control" unique_id=1499742237]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1052.0
+offset_bottom = -548.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(50, 50)
+script = ExtResource("1_p2u7i")
+
+[node name="Back" type="TextureRect" parent="." unique_id=128585147]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = SubResource("AtlasTexture_kqqmp")
+
+[node name="Symbol" type="TextureRect" parent="." unique_id=981860348]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 27.0
+offset_right = 105.0
+offset_bottom = 107.0
+scale = Vector2(0.6, 0.6)
+texture = SubResource("AtlasTexture_njyj0")

@@ -1,0 +1,363 @@
+[gd_scene format=3 uid="uid://c21cfd624o04u"]
+
+[ext_resource type="Script" uid="uid://bns1d3y17uajl" path="res://assets/scripts/StartMenu.gd" id="1_y1e6a"]
+[ext_resource type="Texture2D" uid="uid://bu8el86iry3eh" path="res://assets/images/back.jpg" id="2_kcdgr"]
+[ext_resource type="Shader" uid="uid://b4nsyu2ylehe7" path="res://assets/shaders/MainMenuImage.gdshader" id="2_kr0wa"]
+[ext_resource type="Theme" uid="uid://bgjp71hn36d70" path="res://assets/resources/my_theme.tres" id="4_ec7uv"]
+[ext_resource type="Texture2D" uid="uid://cd4dj6thtpsv6" path="res://assets/images/Chars_Full.png" id="5_g5ji1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ec7uv"]
+shader = ExtResource("2_kr0wa")
+shader_parameter/speed = 1.0
+shader_parameter/width = 0.1
+shader_parameter/angle = 45.0
+shader_parameter/brightness = 0.3
+shader_parameter/pause_duration = 15.0
+
+[sub_resource type="Theme" id="Theme_g5ji1"]
+
+[node name="StartMenu" type="Control" unique_id=32208283]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_y1e6a")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2036038198]
+material = SubResource("ShaderMaterial_ec7uv")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_kcdgr")
+stretch_mode = 5
+
+[node name="InputPanel" type="PanelContainer" parent="." unique_id=47951783]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -220.0
+offset_top = -57.0
+offset_right = 220.0
+offset_bottom = 57.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="InputPanel" unique_id=926146832]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="InputPanel/MarginContainer" unique_id=1489391954]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="InputPanel/MarginContainer/VBoxContainer" unique_id=345236098]
+layout_mode = 2
+
+[node name="LabelConnType" type="Label" parent="InputPanel/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=855036739]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Menu Principal"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="InputPanel/MarginContainer/VBoxContainer" unique_id=860208261]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="InputPanel/MarginContainer/VBoxContainer" unique_id=207674434]
+layout_mode = 2
+columns = 2
+
+[node name="Label" type="Label" parent="InputPanel/MarginContainer/VBoxContainer/GridContainer" unique_id=1065061496]
+layout_mode = 2
+text = "IP do Host:"
+
+[node name="IP" type="LineEdit" parent="InputPanel/MarginContainer/VBoxContainer/GridContainer" unique_id=1812678442]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "127.0.0.1
+"
+alignment = 1
+emoji_menu_enabled = false
+select_all_on_focus = true
+
+[node name="Label2" type="Label" parent="InputPanel/MarginContainer/VBoxContainer/GridContainer" unique_id=735349872]
+layout_mode = 2
+text = "Nome do Jogador:"
+
+[node name="PlayerName" type="LineEdit" parent="InputPanel/MarginContainer/VBoxContainer/GridContainer" unique_id=794380782]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+max_length = 10
+emoji_menu_enabled = false
+select_all_on_focus = true
+
+[node name="HSeparator2" type="HSeparator" parent="InputPanel/MarginContainer/VBoxContainer" unique_id=106876152]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="InputPanel/MarginContainer/VBoxContainer" unique_id=352044257]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="ButtonBack" type="Button" parent="InputPanel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=466310876]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("4_ec7uv")
+text = "Voltar"
+
+[node name="ButtonConnect" type="Button" parent="InputPanel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1442935933]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("4_ec7uv")
+text = "Conectar
+
+"
+
+[node name="MainPanel" type="PanelContainer" parent="." unique_id=1542937863]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -220.0
+offset_top = -57.0
+offset_right = 220.0
+offset_bottom = 57.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MainPanel" unique_id=1094699883]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainPanel/MarginContainer" unique_id=1044452729]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MainPanel/MarginContainer/VBoxContainer" unique_id=1225379944]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MainPanel/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=668885418]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 24
+text = "Menu Principal"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="MainPanel/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=695411760]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme = SubResource("Theme_g5ji1")
+text = "?"
+
+[node name="HSeparator" type="HSeparator" parent="MainPanel/MarginContainer/VBoxContainer" unique_id=36433237]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MainPanel/MarginContainer/VBoxContainer" unique_id=490785321]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="ButtonHost" type="Button" parent="MainPanel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1553507]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("4_ec7uv")
+text = "Servidor
+
+"
+
+[node name="ButtonJoin" type="Button" parent="MainPanel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1045703588]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("4_ec7uv")
+text = "Entrar"
+
+[node name="HelpPanel" type="PanelContainer" parent="." unique_id=1294871751]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -450.0
+offset_top = -300.0
+offset_right = 450.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HelpPanel" unique_id=15472609]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HelpPanel/VBoxContainer" unique_id=2087633703]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HelpPanel/VBoxContainer/MarginContainer" unique_id=248547049]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HelpPanel/VBoxContainer/MarginContainer/VBoxContainer" unique_id=1970281108]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HelpPanel/VBoxContainer/MarginContainer/VBoxContainer/ScrollContainer" unique_id=1133285327]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="HelpPanel/VBoxContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=354494919]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "O Enigma do Labirinto"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="HelpPanel/VBoxContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1720491323]
+layout_mode = 2
+text = "Manual de Instruções"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="HelpPanel/VBoxContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=156316507]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("5_g5ji1")
+expand_mode = 5
+stretch_mode = 4
+
+[node name="FoldableContainer" type="FoldableContainer" parent="HelpPanel/VBoxContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=209980853]
+layout_mode = 2
+folded = true
+title = "O Desafio"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HelpPanel/VBoxContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/FoldableContainer" unique_id=488771661]
+visible = false
+layout_mode = 2
+bbcode_enabled = true
+text = "O labirinto está em [b]constante mudança[/b]! Sua missão é percorrer os corredores mágicos para encontrar tesouros e criaturas misteriosas. Mas cuidado: a cada jogada, o próprio chão sob seus pés pode se mover."
+fit_content = true
+
+[node name="FoldableContainer2" type="FoldableContainer" parent="HelpPanel/VBoxContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1383226379]
+layout_mode = 2
+folded = true
+title = "Objetivo do Jogo"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HelpPanel/VBoxContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/FoldableContainer2" unique_id=1342789726]
+visible = false
+layout_mode = 2
+bbcode_enabled = true
+text = "Os joogadores vão fazer uma busca no labirinto encantado e cada um deles tem uma tarefa a cunprir, procurando [b]objetos[/b] e [b]criaturas[/b] do labirinto. Para que isso seja feito, os jogadores precisam [b]manipular os corredores[/b] com muita esperteza.
+O primeiro jogador a encontrar [b]todos[/b] os elementos de sua busca e [b]voltar ao seu ponto de partida[/b] será o vencedor do jogo."
+fit_content = true
+
+[node name="FoldableContainer3" type="FoldableContainer" parent="HelpPanel/VBoxContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1091085334]
+layout_mode = 2
+folded = true
+title = "As Regras"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HelpPanel/VBoxContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/FoldableContainer3" unique_id=505722160]
+visible = false
+layout_mode = 2
+bbcode_enabled = true
+text = "1. Consultar Objetivo
+Você só conhece um objetivo por vez. O jogo mostrará qual item ou criatura você deve alcançar no labirinto.
+
+2. Como Jogar (Ordem do Turno)
+	- Passo 1: Mover o Labirinto - O Jogador deverá inserir a [b]peça atual[/b] que está de fora do tabuleiro clicando em uma das setas do tabuleiro, isso irá mover todas as peças daquela coluna ou linha. A peça do outro lado do movimento será a próxima peça a ser inserida no tabuleiro.
+
+[center][img]res://assets/images/manual/move.png[/img][/center]
+
+		[b]Obs.:[/b]
+		A peça pode ser [b]rotacionada[/b] antes de ser inserida clicando com o [b]botão direito[/b] do mouse
+		A peça não pode ser recolocada na mesma posição em que estava na ogada anterior, ou seja, o movimento de um jogador não pode ser invertido na jogada seguinte.
+		O jogador [b]deve[/b] mover o labirinto [b]antes[/b] de mover seu peão, mesmo que possa chegar ao sei objetivo sem mover o labirinto.
+		No caso de um peão ser empurrado para fora juntamente com a peça, ele é recolocado no tabuleiro, no outro lado da mesma fila. Isso é válido para qualquer peão, seja do próprio jogador ou de seu adversário.
+
+[center][img]res://assets/images/manual/wrap.png[/img][/center]
+
+	- Passo 2 - Movendo os Peões - Após mover o labirinto, o jogador pode mover seu peão clicando sobre a peça de destino, desde que o caminho esteja livre.
+		Caso o jogador não consiga atingir seu objetivo com um só movimento, ele pode se movimentar até a melhor posição no momento, para que possa alcançar seu objetivo na sua próxima jogada (não se esqueça que o labirinto muda toda a hora, mudando o traçado de seu corredor).
+		Ao chegar ao seu “tesouro”, o jogador mostra a carta, comprovando que este era seu objetivo e a separa, para indicar que ela já foi conquistada. Uma nova carta será exibida e será seu próximo objetivo até que não haja mais cartas disponíveis.
+
+		[b]Obs.:[/b]
+		O jogador pode decidir não mover seu peão, clicando na peça que seu peão já ocupa.
+		Vários jogadores podem ocupar a mesm peça."
+fit_content = true
+
+[node name="FoldableContainer4" type="FoldableContainer" parent="HelpPanel/VBoxContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1015457689]
+layout_mode = 2
+folded = true
+title = "Fim de Jogo"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HelpPanel/VBoxContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/FoldableContainer4" unique_id=2077764797]
+visible = false
+layout_mode = 2
+text = "Depois de ter atingido todos os seus objetivos, o jogador deve voltar a seu ponto de partida. O jogador que conquistar todas os seus objetivos e chegar ao ponto de partida primeiro vencerá o jogo."
+fit_content = true
+
+[node name="FoldableContainer5" type="FoldableContainer" parent="HelpPanel/VBoxContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=2031454501]
+layout_mode = 2
+folded = true
+title = "Iniciando o Jogo"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HelpPanel/VBoxContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/FoldableContainer5" unique_id=518008281]
+visible = false
+layout_mode = 2
+text = "Para iniciar uma partida escolha uma das opções:
+
+1. Servidor: Esse jogador será o anfitrião da partida
+2. Entrar: Entrar em uma partida hospedada por um anfitrião
+
+Após inserir o endereço de IP que será utilziado pra conexão com o anfitrião e informe seu nome, clique em \"Entrar\" e você será elvado para o lobby onde pderá aguardar a entrada dos outros jogadores.
+
+O anfitrião poderá decidir o momento que quiser iniciar a partida clicando em \"Iniciar\""
+fit_content = true
+
+[node name="Control" type="Control" parent="HelpPanel/VBoxContainer" unique_id=1156584776]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CloseHelp" type="Button" parent="HelpPanel/VBoxContainer/Control" unique_id=1285094116]
+layout_mode = 0
+offset_left = 794.0
+offset_top = -570.0
+offset_right = 854.0
+offset_bottom = -510.0
+size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
+text = "X"
+flat = true
+
+[connection signal="pressed" from="InputPanel/MarginContainer/VBoxContainer/HBoxContainer/ButtonBack" to="." method="_on_button_back_pressed"]
+[connection signal="pressed" from="InputPanel/MarginContainer/VBoxContainer/HBoxContainer/ButtonConnect" to="." method="_on_button_connect_pressed"]
+[connection signal="pressed" from="MainPanel/MarginContainer/VBoxContainer/HBoxContainer2/Button" to="." method="display_help"]
+[connection signal="pressed" from="MainPanel/MarginContainer/VBoxContainer/HBoxContainer/ButtonHost" to="." method="_on_button_host_pressed"]
+[connection signal="pressed" from="MainPanel/MarginContainer/VBoxContainer/HBoxContainer/ButtonJoin" to="." method="_on_button_join_pressed"]
+[connection signal="pressed" from="HelpPanel/VBoxContainer/Control/CloseHelp" to="." method="_on_close_help_pressed"]
