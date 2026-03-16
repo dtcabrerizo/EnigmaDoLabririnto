@@ -5,10 +5,6 @@
 [ext_resource type="AudioStream" uid="uid://y3dr76wk4xy4" path="res://assets/sounds/BGM/World-of-Automatons.ogg" id="3_c62mf"]
 [ext_resource type="AudioStream" uid="uid://d22e0s5kkgqby" path="res://assets/sounds/BGM/The-Darkness-Below_Looping.ogg" id="4_233tn"]
 
-[sub_resource type="Gradient" id="Gradient_s8d3p"]
-offsets = PackedFloat32Array(0, 0.22839506, 0.4814815, 0.69753087, 0.8888889)
-colors = PackedColorArray(0.8592025, 0.61171585, 0, 1, 0.2443065, 0.43398258, 1, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1)
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_c62mf"]
 shader = ExtResource("2_4i4eg")
 shader_parameter/circle_size = 1.0
@@ -27,53 +23,12 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
+[sub_resource type="Gradient" id="Gradient_s8d3p"]
+offsets = PackedFloat32Array(0, 0.22839506, 0.4814815, 0.69753087, 0.8888889)
+colors = PackedColorArray(0.8592025, 0.61171585, 0, 1, 0.2443065, 0.43398258, 1, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1)
+
 [node name="Transition" type="CanvasLayer" unique_id=1360123651]
 script = ExtResource("1_s8d3p")
-
-[node name="CPUParticlesL" type="CPUParticles2D" parent="." unique_id=1604791030]
-position = Vector2(1150, 920)
-emitting = false
-amount = 150
-lifetime = 3.0
-one_shot = true
-explosiveness = 0.8
-emission_shape = 1
-emission_sphere_radius = 1.0
-direction = Vector2(-0.7, -1)
-spread = 30.0
-gravity = Vector2(0, 400)
-initial_velocity_min = 500.0
-initial_velocity_max = 900.0
-angular_velocity_max = 20.0
-orbit_velocity_min = 0.01
-orbit_velocity_max = 0.05
-damping_min = 20.0
-damping_max = 40.0
-scale_amount_min = 5.0
-scale_amount_max = 10.0
-color_initial_ramp = SubResource("Gradient_s8d3p")
-
-[node name="CPUParticlesR" type="CPUParticles2D" parent="." unique_id=1262626687]
-position = Vector2(50, 920)
-emitting = false
-amount = 150
-lifetime = 3.0
-one_shot = true
-explosiveness = 0.8
-emission_shape = 1
-emission_sphere_radius = 1.0
-direction = Vector2(0.7, -1)
-spread = 30.0
-gravity = Vector2(0, 400)
-initial_velocity_min = 500.0
-initial_velocity_max = 900.0
-orbit_velocity_min = 0.01
-orbit_velocity_max = 0.05
-damping_min = 20.0
-damping_max = 40.0
-scale_amount_min = 5.0
-scale_amount_max = 10.0
-color_initial_ramp = SubResource("Gradient_s8d3p")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1630988583]
 modulate = Color(1, 1, 1, 0)
@@ -125,3 +80,70 @@ stream = ExtResource("3_c62mf")
 
 [node name="Game_BGM" type="AudioStreamPlayer2D" parent="." unique_id=1260609731]
 stream = ExtResource("4_233tn")
+
+[node name="Control" type="Control" parent="." unique_id=613365398]
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 40.0
+grow_vertical = 0
+size_flags_vertical = 8
+
+[node name="CPUParticlesR" type="CPUParticles2D" parent="Control" unique_id=1262626687]
+position = Vector2(20, 20)
+emitting = false
+amount = 150
+lifetime = 3.0
+one_shot = true
+explosiveness = 0.8
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector2(0.7, -1)
+spread = 30.0
+gravity = Vector2(0, 400)
+initial_velocity_min = 500.0
+initial_velocity_max = 900.0
+orbit_velocity_min = 0.01
+orbit_velocity_max = 0.05
+damping_min = 20.0
+damping_max = 40.0
+scale_amount_min = 5.0
+scale_amount_max = 10.0
+color_initial_ramp = SubResource("Gradient_s8d3p")
+
+[node name="Control2" type="Control" parent="." unique_id=304966280]
+layout_mode = 3
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="CPUParticlesL" type="CPUParticles2D" parent="Control2" unique_id=1604791030]
+position = Vector2(20, 20)
+emitting = false
+amount = 150
+lifetime = 3.0
+one_shot = true
+explosiveness = 0.8
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector2(-0.7, -1)
+spread = 30.0
+gravity = Vector2(0, 400)
+initial_velocity_min = 500.0
+initial_velocity_max = 900.0
+angular_velocity_max = 20.0
+orbit_velocity_min = 0.01
+orbit_velocity_max = 0.05
+damping_min = 20.0
+damping_max = 40.0
+scale_amount_min = 5.0
+scale_amount_max = 10.0
+color_initial_ramp = SubResource("Gradient_s8d3p")

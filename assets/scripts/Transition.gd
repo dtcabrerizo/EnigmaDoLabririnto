@@ -2,7 +2,7 @@ extends CanvasLayer
 
 @onready var rect = $ColorRect
 
-@onready var particles: Array[CPUParticles2D] = [ $CPUParticlesL, $CPUParticlesR ]
+@onready var particles: Array[CPUParticles2D] = [ $Control/CPUParticlesR, $Control2/CPUParticlesL ]
 @onready var toast_notification: MarginContainer = $ToastNotification
 @onready var toast_label: Label = %ToastLabel
 @onready var panel_container: PanelContainer = %PanelContainer
