@@ -13,6 +13,7 @@ config_version=5
 config/name="EnigmaDoLabirinto3D"
 run/main_scene="uid://c21cfd624o04u"
 config/features=PackedStringArray("4.6", "Forward Plus")
+boot_splash/image="uid://dqtgafaju2w0x"
 config/icon="uid://dwwocyhj6d7nx"
 
 [autoload]
